@@ -1,0 +1,144 @@
+BASE
+
+from Alexandrovsky???
+
+--Main Blocks
+-повтор
+	бредкрамб
+	таитл с полоской -------- (полоска справа)
+	hr - right
+	hr - under
+	слаидер на 5 картинок
+
+	таитл ( h4 ? ) с полоской -------- (полоска снизу)
+	ul > li( с иконками )
+		ul(2 col)
+		ul(4 col)
+
+        <p> + "узнать больше+"
+
+	1/3-bg-block fw + slider +( title, subtitle, text)
+	1/3-bg-block + img + ( title, subtitle, text)
+	2/3-bg
+
+	item-wrapper-2col
+	item-wrapper-3col
+		- tac
+		- tal
+	item-wrapper-4col
+
+
+	items(3 col) > item(img + a.title + hr + ul>li + btn)
+
+	modal
+		- for item()
+		- form
+
+	block
+		img(float left) + (title+ text)
+		img(float right) + (title+ text)
+
+	icon + text
+
+
+
+-не повтор
+
+	stars
+	квадраты с bg + text
+	таблица на 2 кол
+	таблица на 3 кол - first col with bg
+	таблица на 3 кол - last col with bg
+	таблица на 4 кол
+	таблица на 5 кол
+	картинка (round) + title subtitle (текст справа)
+	картинка (round) + title subtitle (текст снизу)
+
+	form (name + email + textarea + btn-clear) vertical
+	form (date + date + name + number + bnt-clear) horizontal
+
+	map(fullwith)
+	video(fullwith)
+
+	download block ;
+
+
+
+
+--typography :   ?
+color:
+h1 up 30 ?
+h2 up 30 ?
+h3 Up 26 ?
+h4 up 18b  ?
+h5 up 16 ?
+h6    16b ?
+p - 14 ?
+strong 14b ?
+a - underline
+
+
+
+
+
+
+--время по страницам/блокам
+	- header - 3h
+	- footer - 3h
+
+
+text - 10m
+bread - 1h
+title h2 h3 h4 - по 5м
+картинка (round) + title subtitle (текст справа) 20m + 10next
+slider fw - слаидер на 5 картинок   - 3h по 30м(next)
+таблица на 2 кол - 1ч
+таблица на 3 кол - 1.5ч
+таблица на 4 кол - 2ч
+таблица на 5 кол - 2.5ч
+<p> + "узнать больше+" - 1ч по 15м(next)
+ul > li( с иконками )  - 1.5ч + по 15м(next)
+1/3-bg-block fw + img +( title, subtitle, text)  - 3h по 30м(next)
+icon + text  1ч по 10м(next)
+квадраты с bg + text - 1h + по 10м(next)
+map - 2h
+form4input - form (name + email + textarea + btn-clear) vertical - 2h
+form4input - form (name + email + textarea + btn-clear) horizontal - 2h
+video(fullwith) - 3h по 30м(next)
+item block in items - 2h по 20м(next)
+img(float left) + (title+ text) - 2h по 20м(next)
+modal - 2h по 30м(next)
+
+
+ 	1 - 404 - 2ч
+	2 - bassein - 5
+	3 - billiard - 5
+	4 - hotel - 6
+	5 - konference-servise - 9
+	6 - kontakts 7
+	7 - main - 3 + 2 + 1 + 2.2 + 1 = 8
+	8 - nomere - 6
+	9 - nomera-1nomer - 5
+	10 - nomera-bronirovanie - 2.5
+	11 - restoran - 4.5
+	12 - salon-krasoti - 3.5
+	13 - sauna	 - 3
+	14 - sport-klub - 4.5
+-------------------------------------sum -
+
+
+
+
+
+
+
+
+--TESTING
+
+
+
+
+--P.S.  28.12
+
+
+

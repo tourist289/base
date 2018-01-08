@@ -1,0 +1,64 @@
+стили - импорт всякого  +  потом общие +  mediaStyles
+
+    МЕТКИ
+    можно оставлять в коде как память об месте
+в имени класса или комент
+метка это имя класс .NR
+NR - метка для мест которые не доделаны (not ready)
+PS - записать , сделать общим классом, общ блоком
+
+main - белая область главный контент, дается класс для разных страниц и общий стиль для тега main
+
+или лучше так , main общий , а потом добавляются разные / отдельные (самостоятельные ) section c контеинером внутри, и уже под них стили отталкиваясь на имя класса   -  404 сделал по ней ( .page-404)
+
+
+леиблы с акциями(беидж) - label-wrap обертка для блока label-red с position: relative;
+
+.fw-block - full width banner
+
+
+
+
+.read-more.more-arrow  - " Читать еще ----> "
+.more-arrow - крассная стрелка вправо
+.title  = для Н1 которые на страницах вверху.
+
+item-wrapper обертка
+ .item - блоки по 3
+ .fw.item-wrapper - по 3 на всю ширину 
+
+
+ TESTING 
+
+ 1 + news
+    + mob
+    + html
+ 2 + main katalog
+
+     + mob
+     + html
+ 3 + katalog    katalog.html
+     + последние просмотренные
+     + select from filters-block
+     + mob
+        + filters-block
+     + html
+ 4 + recepies
+     + mob
+     + html
+ 5 + 404    404.html
+     + mob
+     + html
+ 6 + tovar    goods-page
+        забита осн верстка
+     + mob
+     + html
+     + mob-menu
+ 7 - text-page    text.html
+     + mob
+     + html
+        - soc-block
+
+
+P.S.  21.11
+    на страницу главн и товар добавил классы для аним кнопок , в norm.css в конце    и всякие шняги

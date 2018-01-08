@@ -1,0 +1,23 @@
+@import "vars"
+
+.jq-selectbox
+	width: 48%
+	&__select
+		background: transparent
+		box-shadow: none
+		height: 36px
+		border: 1px solid $border
+		&:hover
+			background: transparent
+	&__dropdown
+		top: 100%
+		ul
+			flex-direction: column
+	&__trigger
+		border-left: 0
+	&.focused
+		.jq-selectbox__select
+			border-color: $border
+	li
+		&:hover,&.selected
+			background-color: $red
