@@ -5,6 +5,7 @@ BASE
 
     - сделать типографиюю стили {
 
+
     }
 
     - typography.css - подкл шрифтов, размеры;
@@ -21,3 +22,18 @@ BASE
 
 
 }
+
+
+-- основные блоки по верстке
+   * - таблицы
+    - бредкрамбы
+    - флекс итемы для разных количеств столбиков
+    - формы
+    - картинка (round) + title subtitle (текст справа)
+    - картинка (round) + title subtitle (текст снизу)
+
+    - form (name + email + textarea + btn-clear) vertical
+    - form (date + date + name + number + bnt-clear) horizontal
+
+    - map(fullwith)
+    - video(fullwith)

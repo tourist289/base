@@ -21,7 +21,7 @@ body {
   line-height: 1.2;
   color: #fff;
   text-align: left;
-  background-color: #000000; }
+  background-color: #fff; }
 
 #root {
   height: 100%; }
@@ -257,6 +257,62 @@ p {
 ul {
   font-size: 16px;
   font-size: 16px; }
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  background-color: #fff; }
+  .table th,
+  .table td {
+    padding: 22px;
+    vertical-align: top;
+    border-top: 2px solid #eee; }
+  .table thead th {
+    vertical-align: bottom;
+    border-bottom: 4px solid #eee; }
+  .table tbody + tbody {
+    border-top: 4px solid #eee; }
+  .table .table {
+    background-color: #fff; }
+
+.table-sm th,
+.table-sm td {
+  padding: 12px; }
+
+.table-bordered {
+  border: 2px solid #eee; }
+  .table-bordered th,
+  .table-bordered td {
+    border: 2px solid #eee; }
+  .table-bordered thead th,
+  .table-bordered thead td {
+    border-bottom-width: 4px; }
+
+.table-hover tbody tr {
+  background-color: #ddd; }
+
+.table .thead-dark th {
+  color: #fff;
+  background-color: #000;
+  border-color: orange; }
+
+.table .thead-light th {
+  color: red;
+  background-color: green;
+  border-color: #eee; }
+
+.table-dark {
+  color: #fff;
+  background-color: #000; }
+  .table-dark th,
+  .table-dark td,
+  .table-dark thead th {
+    border-color: orange; }
+  .table-dark.table-bordered {
+    border: 0; }
+  .table-dark.table-hover tbody tr {
+    background-color: #222; }
 
 .name {
   color: #ff0000;
