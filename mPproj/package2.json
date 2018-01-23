@@ -1,5 +1,5 @@
 {
-  "name": "stertPtoject",
+  "name": "startPtoject",
   "version": "2.0.1",
   "description": "Start HTML Template",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "kosyak",
-  "license": "ISC",
+  "license": "BSD-2-Clause",
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "connect": "^3.6.5",
