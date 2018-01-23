@@ -13,10 +13,7 @@
             width: 1200px;
             margin: 0 auto;
             padding: 20px;
-
-
         }
-
         .show-more-block {
             min-height:50px;
             position: relative;
@@ -33,51 +30,59 @@
             display: block;
             margin: 20px 0 0;
         }
-
-
-
     </style>
 
 
     <script src="../libs/jquery.min.js"></script>
     <script>
+        //3.2  show more
         $(document).ready(function () {
-            var block = $('.js-more'),
-                realHeight = block.height(),
-                dataHeight = block.data('height'),
-                moreLink = '<span class="show-more__link js-more-link" >show more</span>',
-                trigger;
 
-            if( realHeight > dataHeight ) {
-                block.after(moreLink);
-                block.css('height', dataHeight);
-                trigger = 1;
-            }
+            (function(){
+                var block = $('.js-more'),
+                    realHeight = block.height(),
+                    dataHeight = block.data('height'),
+                    linkText = block.data('linktext'),
+                    linkText2 = block.data('linktext2'),
+                    moreLink = '<span class="show-more__link js-more-link" >' + linkText + ' </span>';
 
-            $(document).on('click', '.js-more-link', function(){
-                if(trigger) {
-                    block.animate({
-                        height: realHeight
-                    }, 600);
-                    trigger = 0;
-                } else {
-                    block.animate({
-                        height: dataHeight
-                    }, 600);
-                    trigger = 1;
+                if( realHeight > dataHeight ) {
+                    block.after(moreLink);
+                    block.css('height', dataHeight);
+                    block.attr('trigger', 1);
                 }
-            })
+                $(document).on('click', '.js-more-link', function(){
+                    if($(this).prev().attr('trigger') == 1) {
+                        $(this).prev().animate({
+                            height: realHeight
+                        }, 600);
+                        $(this).text(linkText2);
+                        $(this).prev().attr('trigger', 0);
+                    } else {
+                        $(this).prev().animate({
+                            height: dataHeight
+                        }, 600);
+                        $(this).text(linkText);
+                        $(this).prev().attr('trigger', 1);
+                    }
+                });
+            })();
+
         })
+
+
     </script>
 </head>
 <body>
     <div class="container">
+        <!--
+        data-height="70" -  высота, больше которой будет скрываться лишнее содержимое
+        data-linktext="Узнать больше  +" - текст линки
+        data-linktext2="Скрыть"  - текст линки в развернутом виде
+                -->
 
-
-        <div class="show-more-block js-more" data-height="90">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam expedita id odit possimus, ratione sint temporibus velit voluptate voluptatem. Accusantium beatae cumque magni nihil numquam pariatur quos veniam voluptate.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam expedita id odit possimus, ratione sint temporibus velit voluptate voluptatem. Accusantium beatae cumque magni nihil numquam pariatur quos veniam voluptate.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam expedita id odit possimus, ratione sint temporibus velit voluptate voluptatem. Accusantium beatae cumque magni nihil numquam pariatur quos veniam voluptate.</p>
+        <div class="show-more-block js-more" data-height="70" data-linktext="Узнать больше  +" data-linktext2="Скрыть" >
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus, enim error id ipsa iure libero necessitatibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibus vero. Ad earum, ipsa mollitia nostrum odit quos soluta tenetur? Ab commodi dolore minima nobis, reprehenderit saepe. Aut commodi debitis enim esse et impedit maiores modi natus odit provident quis sint, sunt voluptatibus. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qui reiciendis vitae?</p>
         </div>
 
 
