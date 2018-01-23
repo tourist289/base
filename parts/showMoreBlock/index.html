@@ -38,35 +38,69 @@
         //3.2  show more
         $(document).ready(function () {
 
-            (function(){
-                var block = $('.js-more'),
-                    realHeight = block.height(),
-                    dataHeight = block.data('height'),
-                    linkText = block.data('linktext'),
-                    linkText2 = block.data('linktext2'),
-                    moreLink = '<span class="show-more__link js-more-link" >' + linkText + ' </span>';
+            var
+                blocks = $('.show-more-block'),
+                linkText = blocks.data('linktext'),
+                linkText2 = blocks.data('linktext2');
 
-                if( realHeight > dataHeight ) {
-                    block.after(moreLink);
-                    block.css('height', dataHeight);
-                    block.attr('trigger', 1);
-                }
-                $(document).on('click', '.js-more-link', function(){
-                    if($(this).prev().attr('trigger') == 1) {
+
+
+            console.log(blocks);
+
+
+
+           for(var i = 0; i < blocks.length; i++) {
+                   var
+                       realHeight = blocks[i].clientHeight,
+                       dataHeight = blocks[i].dataset.height;
+                       moreLink = document.createElement('span');
+                       moreLink.innerHTML = linkText;
+                       moreLink.className = 'show-more__link js-more-link';
+
+                   console.log(11);
+                   console.dir(blocks[i]);
+                   console.log(realHeight);
+                   console.log(dataHeight);
+
+
+                   if(realHeight > dataHeight) {
+                       console.log(111);
+                       blocks[i].after(moreLink);
+                       blocks[i].style.height = dataHeight + 'px';
+                       blocks[i].dataset.trigger = 1;
+
+                   }
+
+
+
+
+
+
+           };
+
+
+
+            $(document).on('click', '.js-more-link', function(){
+
+//
+                    if( $(this).prev().data('trigger') == 1) {
                         $(this).prev().animate({
                             height: realHeight
-                        }, 600);
+                        }, 500);
                         $(this).text(linkText2);
-                        $(this).prev().attr('trigger', 0);
+                        $(this).prev().data('trigger', 0);
                     } else {
                         $(this).prev().animate({
                             height: dataHeight
-                        }, 600);
+                        }, 500);
                         $(this).text(linkText);
-                        $(this).prev().attr('trigger', 1);
+                        $(this).prev().data('trigger', 1);
                     }
-                });
-            })();
+
+
+
+
+            });
 
         })
 
@@ -81,8 +115,12 @@
         data-linktext2="Скрыть"  - текст линки в развернутом виде
                 -->
 
+        <div class="show-more-block js-more" data-height="70" data-linktext="Узнать больше +" data-linktext2="Скрыть" >
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus, enim error id ipsa iure libero necessitatibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporsitatibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibus vibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibusvtemporibus vero. Ad earum, ipsa mollitia nostrum odit quos soluta tenetur? Ab commodi dolore minima nobmnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibusvtemporibus vero. Ad earum, ipsa mollitia nostrum odit quos soluta tenetur? Ab commodi dolore minima nobis, reprehendeuae qui reiciendis vitae?</p>
+        </div>
+
         <div class="show-more-block js-more" data-height="70" data-linktext="Узнать больше  +" data-linktext2="Скрыть" >
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus, enim error id ipsa iure libero necessitatibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibus vero. Ad earum, ipsa mollitia nostrum odit quos soluta tenetur? Ab commodi dolore minima nobis, reprehenderit saepe. Aut commodi debitis enim esse et impedit maiores modi natus odit provident quis sint, sunt voluptatibus. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qui reiciendis vitae?</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus, enim error id ipsa iure libero necessitatibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibus vero. Ad earum, ipsa mollitia nostrum odit quos soluta tenetur? Ab commodi dolore minima nobis, reprehenderit saepe. Aut commodi debitis enim esse et impedit maiores modi natus odit provident quis sint, sunt voluptatibus. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qu. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qui reiciendis vitae?</p>
         </div>
 
 
