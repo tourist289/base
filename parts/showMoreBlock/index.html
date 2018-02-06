@@ -30,6 +30,24 @@
             display: block;
             margin: 20px 0 0;
         }
+
+
+        .show-more-block .text-wrap:after {
+            content: '';
+            width: 100%;
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            height: 50px;
+            background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        }
+
+        .show-more-block .text-wrap.open:after {
+            content: '';
+            display: none;
+        }
+
     </style>
 
 
@@ -120,7 +138,9 @@
         </div>
 
         <div class="show-more-block js-more" data-height="70" data-linktext="Узнать больше  +" data-linktext2="Скрыть" >
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus, enim error id ipsa iure libero necessitatibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibus vero. Ad earum, ipsa mollitia nostrum odit quos soluta tenetur? Ab commodi dolore minima nobis, reprehenderit saepe. Aut commodi debitis enim esse et impedit maiores modi natus odit provident quis sint, sunt voluptatibus. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qu. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qui reiciendis vitae?</p>
+            <div class="text-wrap">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque delectus, enim error id ipsa iure libero necessitatibus omnis saepe sint! Adipisci aspernatur eaque et id maxime nihil perspiciatis sed temporibus vero. Ad earum, ipsa mollitia nostrum odit quos soluta tenetur? Ab commodi dolore minima nobis, reprehenderit saepe. Aut commodi debitis enim esse et impedit maiores modi natus odit provident quis sint, sunt voluptatibus. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qu. Animi beatae dicta dolore doloribus ea, hic impedit incidunt, iure laboriosam quae quasi quod reiciendis veritatis. Accusantium ad aliquam architecto deleniti deserunt dignissimos distinctio dolor dolore ea est fugiat fugit hic in, iusto libero maiores maxime modi molestias obcaecati odio officia provident qui quia quidem quisquam rem repudiandae voluptatem? Doloremque magnam maxime, numquam quae qui reiciendis vitae?</p>
+            </div>
         </div>
 
 
