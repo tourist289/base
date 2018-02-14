@@ -32,7 +32,7 @@
         }
 
 
-        .show-more-block .text-wrap:after {
+       .show-more-block .text-wrap:after {
             content: '';
             width: 100%;
             display: block;
@@ -40,12 +40,13 @@
             bottom: 0px;
             left: 0;
             height: 50px;
+            transition: height .3s;
+            color: red;
             background: linear-gradient(to top, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
         }
-
-        .show-more-block .text-wrap.open:after {
-            content: '';
-            display: none;
+        .show-more-block.open .text-wrap:after {
+            height: 0;
+            transition: height .3s;
         }
 
     </style>
@@ -78,21 +79,23 @@
            }
 
             $(document).on('click', '.js-more-link', function(){
-                    var realheight = $(this).data('height')
-
-                    if( $(this).prev().data('trigger') == 1) {
-                        $(this).prev().animate({
-                            height: realheight
-                        }, 500);
-                        $(this).text(linkText2);
-                        $(this).prev().data('trigger', 0);
-                    } else {
-                        $(this).prev().animate({
-                            height: dataHeight
-                        }, 500);
-                        $(this).text(linkText);
-                        $(this).prev().data('trigger', 1);
-                    }
+                var realheight = $(this).data('height'),
+                    parent = $(this).prev();
+                if( parent.data('trigger') == 1) {
+                    parent.animate({
+                        height: realheight
+                    }, 500);
+                    $(this).text(linkText2);
+                    parent.data('trigger', 0);
+                    parent.addClass('open');
+                } else {
+                    parent.animate({
+                        height: dataHeight
+                    }, 500);
+                    $(this).text(linkText);
+                    parent.data('trigger', 1);
+                    parent.removeClass('open');
+                }
             });
 
             //
