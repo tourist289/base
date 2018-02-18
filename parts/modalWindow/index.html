@@ -15,7 +15,7 @@
             padding: 20px;}
 
 
-        .modalDiv {
+        .modal__wrap {
             width:  1140px;
             box-sizing: border-box;
             height: auto;
@@ -41,7 +41,7 @@
         /*#overlay*/
       .modal__overlay {
 
-          marginRight: -15px;
+          margin-right: -15px;
           z-index: 11;
          position: fixed;
          background-color: rgba(35, 45, 53, .5);
@@ -71,21 +71,20 @@
 
     .modal__close:before {
         content: 'х';
-        background: url("../img/icon-modal-close2.png") no-repeat 0 0;
-        background-size: contain;
+        /*background: url("../img/icon-modal-close2.png") no-repeat 0 0;*/
+        /*background-size: contain;*/
         display: block;
-        position: absolute;
-        font-size: 14px;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
+        position: relative;
+        color: red;
+        font-size: 18px;
+        text-transform: uppercase;
         opacity: .7;
         transition: all .25s;}
+
     .modal_open {
         overflow: hidden;
-        width: 100%;
-        margin-right: -15px;
+        max-width: 99%;
+        margin-right: 0
     }
 
     </style>
@@ -97,49 +96,103 @@
 // 1 MODAL WINDOW
            // modal__close **** closemodalicon     !!!
 
-            var overlay ,
-                modal,
-                modalTrigger = $('.js-modal');
+            var __curModal ;
 
-            modalTrigger.on('click', function(e){
+            $('.js-modal').on('click', function(e){
 
                 e.preventDefault();
-                modal = $(this).data('href');
-                overlay = $(modal).parent();
+                __curModal = $(this).data('href');
 
-                overlay.fadeIn(400, function(){
-                    $(modal).css('display', 'block').animate({
-                        top: '8%',
-                        opacity: 1
-                    }, 400);
-                    $('body').addClass('modal_open');
-                });
+                
+                
+                openModal(__curModal);
+            });
+
+            $(window).on("orientationchange resize", function() {
+                console.log("orientationchange resize")
+                console.log(__curModal)
+                setModalPosition(__curModal);
             });
 
             /* close modal on close button */
             $(window).on('click', function(e){
                 if(e.target.className == 'modal__overlay' ||
                     e.target.className == 'modal__close'){
-                    funcCloseModal();
+                    closeModal();
                 }
             });
 
             //============  ESCAPE key pressed
             $(document).keydown(function(e) {
                 if (e.keyCode == 27) {
-                    funcCloseModal();
+                    closeModal();
                 }
             });
 
-            function funcCloseModal() {
-                $('.modalDiv').animate({ opacity: 0, top: '45%'}, 200);
-                $('.modalDiv').css('display', 'none');
-                $('.modalDiv').parent().fadeOut(400);
+            function setModalPosition(id) {
+                var modal = $(id);
+                var ind ;
+                setTimeout(function(){
+                    let style = function(){
+                        if( modal[0].clientHeight > $(window).height() ){
+                            return {
+                                top: '20px',
+                                marginTop: 0,
+                                ind: 1,
+                                opacity: 1
+                            }
+                        } else {
+                            return {
+                                top: $(window).height() / 2 + 'px',
+                                opacity: 1,
+                                ind: 0,
+                                marginTop: '-' + modal[0].clientHeight / 2 + 'px'
+                            }
+                        }
+                    };
+
+                    stIdn = style().ind;
+                    console.log(222222)
+
+                    console.log(stIdn , 'styleind')
+                    console.log(ind, 'ind')
+
+
+
+                    if(stIdn != ind) { console.log(111)
+
+                        modal.css('display', 'block').animate( style(), 400);
+                        ind = stIdn;
+                    } else { console.log(3333)
+
+                        ind = ind ;
+
+                    }
+
+                }, 100);
+            }
+            function openModal(id) {
+                console.log('open')
+                if( $(id)[0].parentElement.className != 'modal__overlay' ){
+                    $(id).wrap("<div class='modal__overlay'></div>");
+                }
+                let overlay = $(id).parent();
+                overlay.fadeIn(400, setModalPosition(id));
+                $('body').addClass('modal_open');
+            }
+
+            function closeModal() {
+                let modal = $('.modal__wrap');
+                modal.animate({ opacity: 0, top: '45%'}, 200);
+                modal.css('display', 'none');
+                modal.parent().fadeOut(400);
                 $('body').removeClass('modal_open');
                 setTimeout(function () {
-                    $('.modalDiv').removeAttr('style');
+                    modal.removeAttr('style');
                 }, 400);
             }
+
+
         })
 
 
@@ -147,6 +200,7 @@
 </head>
 <body>
     <div class="container">
+
         <button class="js-modal" data-href="#myModal">OPEN MODAL</button>
 
     </div>
@@ -158,9 +212,10 @@
             .js-modal - класс для кнопки запуска модала
                  - data-href="#myModal" - на кнопке покажет какой модал открывать
             -->
-    <!--MODAL WINDOW " MAP " -->
-    <div class="modal__overlay">
-        <div id="myModal" class="modalDiv ">
+
+    <!--MODAL HTML " -->
+    <!--<div class="modal__overlay">-->
+        <div id="myModal" class="modal__wrap ">
 
             <span class="modal__close"></span>
 
@@ -171,7 +226,7 @@
             </section>
 
         </div>
-    </div>
+    <!--</div>-->
 
 
 </body>
