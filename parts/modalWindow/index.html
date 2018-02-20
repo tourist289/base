@@ -111,7 +111,22 @@
             $(window).on("orientationchange resize", function() {
                 console.log("orientationchange resize")
                 console.log(__curModal)
-                setModalPosition(__curModal);
+
+
+                var ind ;
+
+                if(stIdn != ind) { console.log(111)
+
+                    setModalPosition(id)
+                    ind = stIdn;
+                } else { console.log(3333)
+
+                    ind = ind ;
+
+                }
+
+
+
             });
 
             /* close modal on close button */
@@ -129,9 +144,12 @@
                 }
             });
 
+
+
+
+
             function setModalPosition(id) {
                 var modal = $(id);
-                var ind ;
                 setTimeout(function(){
                     let style = function(){
                         if( modal[0].clientHeight > $(window).height() ){
@@ -151,23 +169,9 @@
                         }
                     };
 
-                    stIdn = style().ind;
-                    console.log(222222)
 
-                    console.log(stIdn , 'styleind')
-                    console.log(ind, 'ind')
+                    modal.css('display', 'block').animate( style(), 400);
 
-
-
-                    if(stIdn != ind) { console.log(111)
-
-                        modal.css('display', 'block').animate( style(), 400);
-                        ind = stIdn;
-                    } else { console.log(3333)
-
-                        ind = ind ;
-
-                    }
 
                 }, 100);
             }
