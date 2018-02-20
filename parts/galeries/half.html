@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>two images divider</title>
+</head>
+<body>
+<style>
+    #mySlide {
+        width: 375px;
+        height: 400px;
+        border: 3px solid black;
+        position: relative;
+        overflow: hidden;
+
+    }
+    #one, #two {
+        width: 375px;
+        height: 400px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        overflow: hidden;
+    }
+    #two img,
+    #one img {
+        max-height: 100%;
+    }
+</style>
+
+<div id="mySlide">
+    <div id="one">
+        <img src="http://www.apicius.es/wp-content/uploads/2012/07/IMG-20120714-009211.jpg" alt="">
+    </div>
+    <div id="two">
+        <img src="http://static-news.moneycontrol.com/static-mcnews/2017/08/Telecom_Smartphone_Mobile_tablet_telecom1-654x435.jpg" alt="">
+    </div>
+</div>
+
+<script>
+    (function(){
+        document.getElementById('mySlide').onmousemove = function(event){
+            var x = event.offsetX;   // относительно родителя
+            document.getElementById('two').style.width = x + 'px';
+
+        }
+    })();
+</script>
+
+</body>
+</html>
