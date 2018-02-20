@@ -94,39 +94,20 @@
     <script>
         $(document).ready(function () {
 // 1 MODAL WINDOW
-           // modal__close **** closemodalicon     !!!
 
             var __curModal ;
 
             $('.js-modal').on('click', function(e){
-
                 e.preventDefault();
                 __curModal = $(this).data('href');
-
-                
-                
                 openModal(__curModal);
             });
 
-            $(window).on("orientationchange resize", function() {
-                console.log("orientationchange resize")
-                console.log(__curModal)
 
-
-                var ind ;
-
-                if(stIdn != ind) { console.log(111)
-
-                    setModalPosition(id)
-                    ind = stIdn;
-                } else { console.log(3333)
-
-                    ind = ind ;
-
+            $(window).on("orientationchange resize ", function() {
+                if($('body').hasClass('modal_open')){
+                    setModalPosition(__curModal);
                 }
-
-
-
             });
 
             /* close modal on close button */
@@ -147,40 +128,41 @@
 
 
 
-
             function setModalPosition(id) {
                 var modal = $(id);
+                var position ;
+                modal.stop();
                 setTimeout(function(){
-                    let style = function(){
-                        if( modal[0].clientHeight > $(window).height() ){
+                    if( modal[0].clientHeight > $(window).height() ){
+                        position = "TOP"
+                    } else {
+                        position = "CENTER"
+                    }
+                    modal.animate( getPosition(position), 400);
+
+                    function getPosition(position){
+                        if(position == "TOP") {
                             return {
                                 top: '20px',
                                 marginTop: 0,
-                                ind: 1,
                                 opacity: 1
                             }
                         } else {
                             return {
                                 top: $(window).height() / 2 + 'px',
                                 opacity: 1,
-                                ind: 0,
                                 marginTop: '-' + modal[0].clientHeight / 2 + 'px'
                             }
                         }
-                    };
-
-
-                    modal.css('display', 'block').animate( style(), 400);
-
-
-                }, 100);
+                    }
+                }, 200);
             }
             function openModal(id) {
-                console.log('open')
                 if( $(id)[0].parentElement.className != 'modal__overlay' ){
                     $(id).wrap("<div class='modal__overlay'></div>");
                 }
                 let overlay = $(id).parent();
+                $(id).css('display', 'block');
                 overlay.fadeIn(400, setModalPosition(id));
                 $('body').addClass('modal_open');
             }
