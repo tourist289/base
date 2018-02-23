@@ -94,13 +94,15 @@
     <script>
         $(document).ready(function () {
 // 1 MODAL WINDOW
-
             var __curModal ;
 
             $('.js-modal').on('click', function(e){
-                e.preventDefault();
                 __curModal = $(this).data('href');
-                openModal(__curModal);
+                setTimeout(function(){
+                    console.log(11111);
+                    openModal(__curModal)
+                }, 1100)
+                ;
             });
 
 
@@ -129,6 +131,7 @@
 
 
             function setModalPosition(id) {
+
                 var modal = $(id);
                 var position ;
                 modal.stop();
@@ -157,21 +160,39 @@
                     }
                 }, 200);
             }
+
+
             function openModal(id) {
-                if( $(id)[0].parentElement.className != 'modal__overlay' ){
-                    $(id).wrap("<div class='modal__overlay'></div>");
-                }
-                let overlay = $(id).parent();
-                $(id).css('display', 'block');
-                overlay.fadeIn(400, setModalPosition(id));
-                $('body').addClass('modal_open');
+                // setTimeout(function () {
+
+                    if( $(id)[0].parentElement.className != 'modal__overlay' ){
+                        $(id).wrap("<div class='modal__overlay'></div>");
+                    }
+
+                    if($('body').hasClass('modal_open')){
+                        closeModal();
+                    }
+
+                    let overlay = $(id).parent();
+                    $(id).css('display', 'block');
+                    overlay.fadeIn(400, setModalPosition(id));
+                    $('body').addClass(`modal_open ${id}`);
+                    $('body').data('modal-id',  id);
+
+
+                // }, 1100)
+
+            }
+
+            let triggerModals = () => {
+
             }
 
             function closeModal() {
                 let modal = $('.modal__wrap');
                 modal.animate({ opacity: 0, top: '45%'}, 200);
                 modal.css('display', 'none');
-                modal.parent().fadeOut(400);
+                modal.parent('.modal__overlay').fadeOut(400);
                 $('body').removeClass('modal_open');
                 setTimeout(function () {
                     modal.removeAttr('style');
@@ -197,22 +218,50 @@
             .modal__overlay > #map-block  - по id идет привязка кнопки открытия модала и модала
             .js-modal - класс для кнопки запуска модала
                  - data-href="#myModal" - на кнопке покажет какой модал открывать
-            -->
+    -->
+
 
     <!--MODAL HTML " -->
-    <!--<div class="modal__overlay">-->
         <div id="myModal" class="modal__wrap ">
-
             <span class="modal__close"></span>
 
             <section class="modal__content">
-                <h3>Lorem ipsum dolor.</h3>
+                <h3>Lorem ipsum dolor. 11111</h3>
                 <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus.</h4>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa delectus deleniti, eius esse est id, iste iure molestias nihil perspiciatis quas quasi quibusdam ratione repellat. Beatae exercitationem hic laudantium libero quasi voluptatibus. Aut eos eum iure nostrum quisquam! </p>
-            </section>
 
+                <button class="js-modal" data-href="#myModal2">OPEN next MODAL</button>
+            </section>
         </div>
-    <!--</div>-->
+
+
+    <!--MODAL HTML 2" -->
+        <div id="myModal2" class="modal__wrap ">
+            <span class="modal__close"></span>
+
+            <section class="modal__content">
+                <h3>Lorem ipsum dolor. 222222</h3>
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus.</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa delectus deleniti, eius esse est id, iste iure molestias nihil perspiciatis quas quasi quibusdam ratione repellat. Beatae exercitationem hic laudantium libero quasi voluptatibus. Aut eos eum iure nostrum quisquam! </p>
+
+                <button class="js-modal" data-href="#myModal">OPEN first MODAL</button>
+                <button class="js-modal" data-href="#myModal3">OPEN third MODAL</button>
+            </section>
+        </div>
+
+
+    <!--MODAL HTML 3" -->
+        <div id="myModal3" class="modal__wrap ">
+            <span class="modal__close"></span>
+
+            <section class="modal__content">
+                <h3>Lorem ipsum dolor. 3333 </h3>
+                <h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus.</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A culpa delectus deleniti, eius esse est id, iste iure molestias nihil perspiciatis quas quasi quibusdam ratione repellat. Beatae exercitationem hic laudantium libero quasi voluptatibus. Aut eos eum iure nostrum quisquam! </p>
+
+                <button class="js-modal" data-href="#myModal2">OPEN second MODAL</button>
+            </section>
+        </div>
 
 
 </body>
