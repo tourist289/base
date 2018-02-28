@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cards</title>
+
+
+    <style>
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .cards {
+             background: #f1eee5;
+             padding: 30px 0; }
+        .cards .items {
+            flex-wrap: wrap; }
+        .cards .card {
+            box-shadow: 0 0 15px rgba(68, 60, 34, 0.15);
+            background: #fff;
+            border: 10px solid #fff;
+            width: 31.3%;
+            min-height: 729px;
+            margin: 0 0.5% 40px;
+            position: relative; }
+        .cards .card__info {
+            height: 347px;
+            padding: 20px 20px 10px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden; }
+        .cards .card__info .media-list ul {
+            margin-bottom: 0; }
+        .cards .card__info .media-list li {
+            margin-bottom: 7px; }
+        .cards .card__info .media-list p, .cards .card__info .media-list strong {
+            font-family: "Roboto Slab";
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0px; }
+        .cards .card__info .media-list .icon {
+            margin-right: 3px; }
+        .cards .card__title {
+            color: #a8806b;
+            font-weight: 400;
+            margin-bottom: 10px;
+            letter-spacing: -0.4px; }
+        .cards .card figure {
+            cursor: pointer;
+            max-height: 240px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            justify-content: center; }
+        .cards .card .btn-def {
+            width: 90%;
+            left: 5%;
+            height: 48px;
+            transition: all .3s;
+            bottom: 0;
+            margin: 0 0 20px; }
+        .cards .card .btn-def:hover {
+            background-color: #5c4d45;
+            border-color: #5c4d45;
+            color: #f1eee5;
+            transition: all .3s; }
+        .cards .card .btn-def:focus {
+            outline: none; }
+
+
+    </style>
+
+
+    <!--<script src="../libs/jquery.min.js"></script>-->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+
+
+        <section class="cards">
+            <div class="container">
+
+
+                <div class="items items_col3">
+
+
+                    <div class="card">
+                        <figure >
+                            <img data-slide="1" data-href="#modalWindow__nomer" class="js-modal" src="img/img-nomer-standartsingle-min.jpg" alt="">
+                        </figure>
+
+                        <div class="card__info">
+                            <h4 class="card__title">Стандарт   SNGL  </h4>
+                            <h4 class="card__price title_dashed title_dashed-bottom" >468 грн/сутки</h4>
+
+                            <section class="media-list">
+                                <ul>
+                                    <li class="media media_row">
+                                        <span class="icon icon_sm icon_door-grey "> </span>
+                                        <p>Количество номеров: 5 </p>
+                                    </li>
+                                    <li class="media media_row">
+                                        <span class="icon icon_sm icon_m2-grey"></span>
+                                        <p> Площадь номера: 18 м2. </p>
+                                    </li>
+                                    <li class="media media_row">
+                                        <span class="icon icon_sm icon_man-grey "> </span>
+                                        <p>Размещение: одноместное </p>
+                                    </li>
+                                    <li class="media media_row">
+                                        <span class="icon icon_sm icon_bed-grey "> </span>
+                                        <p>Тип кровати: односпальная </p>
+                                    </li>
+                                    <li class="media media_row">
+                                        <span class="icon icon_sm icon_breakfast-grey"> </span>
+                                        <p>В стоимость номена входит завтрак  </p>
+                                    </li>
+                                    <li class="media media_row">
+                                        <span class="icon icon_sm icon_shower-grey"> </span>
+                                        <p>Номер оборудован душевой кабиной </p>
+                                    </li>
+                                </ul>
+
+                            </section>
+                        </div>
+                        <button data-title="Стандарт   SNGL" data-href="#modalWindow"  data-id="1" class="js-check btn-def btn-def_fff">забронировать номер </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+</body>
+</html>

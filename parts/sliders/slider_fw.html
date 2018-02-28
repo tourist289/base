@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>fw slider line </title>
+
+    <link rel="stylesheet" type="text/css" href="../libs/slick/slick.css"/>
+    <!--// Add the new slick-theme.css if you want the default styling-->
+    <link rel="stylesheet" type="text/css" href="../libs/slick/slick-theme.css"/>
+
+    <style>
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.slider_fw .slide img {
+    display: block;
+    max-width: 100%;
+}
+
+
+
+    </style>
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+
+
+    <script type="text/javascript" src="../libs/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+// slider_fw
+
+            $('.js-slider_fw').slick(getSliderFWSettings());
+
+            function getSliderFWSettings(){
+                return {
+                    slidesToShow:5,
+                    slidesToScroll:3,
+                    arrows: true,
+                    dots: false,
+                    focusOnSelect:true,
+                    autoplay: false,
+                    responsive:[
+                        {
+                            breakpoint: 1400,
+                            settings:{
+                                slidesToShow: 5,
+                                slidesToScroll:2
+                            }
+                        },
+                        {
+                            breakpoint: 1200,
+                            settings:{
+                                slidesToShow: 4,
+                                slidesToScroll:2
+                            }
+                        },
+                        {
+                            breakpoint: 991,
+                            settings:{
+                                slidesToShow: 3,
+                                slidesToScroll:1
+                            }
+                        },
+                        {
+                            breakpoint: 760,
+                            settings:{
+                                slidesToShow: 2,
+                                slidesToScroll:1
+                            }
+                        },
+                        {
+                            breakpoint: 550,
+                            settings:{
+                                slidesToShow: 1,
+                                slidesToScroll:1
+                            }
+                        }
+
+                    ]
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+
+        <div class="slider slider_fw js-slider_fw">
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+        </div>
+
+
+
+    <div class="container">
+
+        <div class="slider slider_fw js-slider_fw">
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+            <div class="slide">
+                <img src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+            </div>
+        </div>
+
+
+
+
+        <div class="wrap">
+            <img style="
+                width: 481px;
+                height:400px;
+                object-fit: cover; "
+                src="http://i81.beon.ru/78/59/1425978/88/83143188/rfhnbyrf.jpeg" alt="">
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+
+
+
