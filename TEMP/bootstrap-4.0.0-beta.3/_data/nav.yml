@@ -7,7 +7,7 @@
     - title: JavaScript
     - title: Theming
     - title: Build tools
-    # - title: Best practices # TODO: Write this content
+    # - title: Best practices # todo_ads: Write this content
     - title: Webpack
     - title: Accessibility
 

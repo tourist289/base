@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>main Nav</title>
+
+
+    <style>
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .headbottom .dropdown.open > a {
+            background-color: #000;
+        }
+        .headbottom .dropdown-menu {
+            background: #fff;
+            margin-left: -1px !important;
+            top: 24px;
+            padding: 10px 0px 20px;
+            position: absolute;
+            border-radius: 0;
+            width: 350px;
+            border: none;
+        }
+
+        .headbottom .dropdown-menu:before {
+            content: '';
+            background: #f12729;
+            width: 100%;
+            height: 4px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+        }
+
+        .headbottom .dropdown-menu ul {
+            padding: 0 20px;
+        }
+
+        .mm-listview .back-call {
+            display: none;
+        }
+        .headbottom .dropdown-menu .see-all {
+            padding: 8px 18px;
+            text-transform: uppercase;
+            color: #fff;
+            background: #f12729;
+            border-radius: 4px;
+            position: relative;
+            padding-right: 35px;
+            display: inline-block;
+            margin: 10px 15px 0;
+        }
+
+        .headbottom .dropdown-menu .see-all:hover {
+            color: #fff;
+            background: #1d1d1d !important;
+            transition: background .3s;
+        }
+
+        .headbottom .dropdown-menu .see-all:after {
+            content: '';
+            background: url(../image/icon-leftArrow.png) no-repeat 0 0;
+            background-size: contain;
+            width: 11px;
+            height: 13px;
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            display: block;
+        }
+
+        .headbottom .dropdown-menu li {
+            border-top: 1px solid #dddddd;
+            padding: 0;
+        }
+
+        .headbottom .dropdown-menu li:first-child {
+            border-top: 0;
+        }
+        .sub-list span,
+        .headbottom .dropdown-menu li a {
+            padding: 5px 25px 5px 0;
+            display: block;
+            color: #000000;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 29px;
+            text-transform: none;
+        }
+        .headbottom .dropdown-menu li a {
+            padding: 5px 25px 5px 0px;
+        }
+        .sub-list span:hover,
+        .headbottom .dropdown-menu li a:hover {
+            color: #ff0000;
+            text-decoration: underline;
+        }
+
+        .headbottom {
+            background: black;
+            display: -webkit-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+
+        .headbottom > .container {
+            margin: 0 auto;
+            flex-grow: 0;
+            display: flex;
+            justify-content: space-between;
+            background: black;
+            padding: 0;
+        }
+
+        .headbottom .container > * {
+            display: inline-block;
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .headbottom .navbar {
+            display: block;
+            padding: 0;
+            margin-bottom: 0;
+            max-width: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 24px;
+        }
+
+        .headbottom .navbar .navbar-collapse {
+            padding-left: 0;
+        }
+        .headbottom .navbar .navbar-collapse li:before {
+            display: none;
+        }
+
+        .headbottom .navbar a {
+            color: #ffffff;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 0;
+        }
+
+        .headbottom .navbar a:hover,
+        .headbottom .navbar a:focus {
+            background-color: #000;
+            border-color: #000;
+        }
+
+        .headbottom .navbar .dropdown-menu a:hover,
+        .headbottom .navbar .dropdown-menu a:focus {
+            background-color: #fff;
+            border-color: #fff;
+        }
+
+        .headbottom .link-wrapper {
+            display: -webkit-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: flex-start;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 308px;
+            margin-right: 57px;
+        }
+
+        .headbottom .link-wrapper a {
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .headbottom .link-wrapper a:first-child {
+            margin-right: 40px;
+        }
+
+        #search .btn-default:hover,
+        #search .btn-default:focus {
+            outline: none;
+            background: #fff;
+            box-shadow: none;
+        }
+
+        .headbottom .search-wrapper {
+            max-width: 350px;
+            display: inline-block;
+            align-self: center;
+            margin-right: 23px;
+        }
+
+        .headbottom .search-wrapper button,
+        .headbottom .search-wrapper input {
+            height: 43px;
+            display: inline-block;
+            position: relative;
+            padding: 0 10px;
+            border: none;
+        }
+
+        .headbottom .search-wrapper input {
+            font-size: 14px;
+            height: 43px;
+        }
+
+        .headbottom .search-wrapper button i {
+            top: 0;
+            position: relative;
+            right: 6px;
+            font-size: 20px;
+        }
+
+
+
+
+    </style>
+
+
+    <!--<script src="../libs/jquery.min.js"></script>-->
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous">
+    </script>
+</head>
+<body>
+
+
+<div class=" headbottom">
+    <div class="container">
+
+
+        <div class="mobile-menu">
+            <a href="#my-menu" class="hamburger hamburger--elastic">
+                      <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+                      </span>
+
+            </a>
+
+        </div>
+        <a href="http://elta.test-02.in.ua/" class="mobile-title">Elta-ltd</a>
+
+
+
+        <nav id="menu" class="navbar">
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <div class="dropdown">
+                        <a href="/" class="dropdown-toggle" data-toggle="dropdown">Каталог</a>
+
+                        <div class="dropdown-menu" style="margin-left: -260.406px;">
+                            <div class="dropdown-inner">
+                                <ul class="list-unstyled">
+
+                                    <!-- todo_ads_back   добавил подпункты для верхнего меню   -->
+
+                                    <li class="sub-list">
+                                        <span class="sub-list__trigger">subcategory</span>
+                                        <ul class="sub-list__ul">
+                                            <li><a href="#">item1</a></li>
+                                            <li><a href="#">item2</a></li>
+                                            <li><a href="#">item3</a></li>
+                                            <li><a href="#">item4</a></li>
+                                            <li><a href="#">item5</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li>
+                                        <a href="http://elta.test-02.in.ua/index.php?route=product/category&amp;path=3588">Аппаратура управления SIPLUS</a>
+                                    </li>
+
+
+                                    <li class="sub-list">
+                                        <span class="sub-list__trigger">subcategory</span>
+                                        <ul class="sub-list__ul">
+                                            <li><a href="#">item1</a></li>
+                                            <li><a href="#">item2</a></li>
+                                            <li><a href="#">item3</a></li>
+                                        </ul>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+
+                            <a href="http://elta.test-02.in.ua/katalog/" class="see-all">
+                                Все категории                                        </a>
+
+                        </div>
+
+                    </div>
+                </ul>
+
+            </div>
+
+        </nav>
+
+        <span class="link-wrapper">
+            <a href="http://elta.test-02.in.ua/about_us">о компании</a>
+            <a href="http://elta.test-02.in.ua/contact-us/">контакты </a>
+        </span>
+
+        <span class="search-wrapper">
+            <div id="search" class="input-group">
+                <input type="text" name="search" value="" class="form-control input-lg input_item">
+                <span class="input-group-btn">
+                <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+                </span>
+            </div>
+        </span>
+
+
+
+    </div>
+
+</div>
+
+
+</body>
+</html>
