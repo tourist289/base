@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,12 +15,11 @@
             margin: 0 auto;
             padding: 20px;
         }
-
         .backTop {
             cursor: pointer;
             width: 25px;
             height: 25px;
-            display: block;
+            display: none;
             position: fixed;
             bottom: 22%;
             right: 10%;
@@ -66,7 +66,6 @@
             0% { opacity: .5; }
             100% { opacity: 1; }
         }
-
     </style>
 
 
@@ -77,25 +76,18 @@
             crossorigin="anonymous">
     </script>
     <script>
+      $(document).ready(function () {
+          const displaySelection =  (height) => $(this).scrollTop() > height ? $('.backTop').fadeIn() : $('.backTop').fadeOut();
+          $('.js-toTop').append('<span></span>');
+          $(window).on('scroll', function() {
+            displaySelection(450)
+          });
 
-$(document).ready(function () {
-
-//  back to top
-
-    $('.js-toTop').append('<span></span>');
-    $(window).on('scroll load', function() {
-        if($(this).scrollTop() > 450) {
-            $('.backTop').fadeIn();
-        } else {
-            $('.backTop').fadeOut();
-        }
-    });
-
-    $('.js-toTop').click(function(){
-        $('html, body').animate({scrollTop:0}, 'slow');
-    });
-})
-
+          displaySelection(450);
+          $('.js-toTop').click(function(){
+              $('html, body').animate({scrollTop:0}, 'slow');
+          });
+      })
     </script>
 </head>
 <body>
