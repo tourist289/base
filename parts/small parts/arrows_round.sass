@@ -1,0 +1,44 @@
+.slick-next, .slick-prev
+    background: #fff
+    border: none
+    border-radius: 50%
+    width: 57px
+    height: 57px
+    box-shadow: 0 0 27px -8px grey
+    font-size: 0
+    line-height: 0
+    position: absolute
+    top: 50%
+    left: 240px
+    padding: 0
+    cursor: pointer
+    outline: 0
+    z-index: 2
+    transition: background .3s
+    display: flex
+    justify-content: center
+    &:before
+      content: "\f104"
+      font-family: FontAwesome,sans-serif
+      font-size: 26px
+      font-weight: 700
+      line-height: 26px
+      display: block
+      color: #000
+      height: auto
+      padding: 0
+      margin: -1px 0 0 -1px
+      position: absolute
+      align-self: center
+    &:hover
+      background: #fdea75
+      transition: background .3s
+      &:before
+        color: #fff
+
+  .slick-next
+    left: auto
+    right: 240px
+    transform: rotate(180deg)
+    &:before
+      margin: -1px 0 0 -2px
