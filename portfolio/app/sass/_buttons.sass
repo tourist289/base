@@ -1,0 +1,57 @@
+@import "vars"
+
+button, .button
+	color: $w
+	position: relative
+	display: inline-block
+	background-color: $gre
+	border: none
+	outline: none
+	border-radius: 3px
+	padding: 12px 29px
+	cursor: pointer
+	font-weight: 700
+	letter-spacing: -0.14px
+	&:hover
+		background-color: $gh
+	&:after
+		content: ''
+		background: $w
+		display: block
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		right: 0
+		opacity: 0
+		transition: all $duration $transition-style
+	&:active:after
+		width: 0
+		opacity: 1
+		transition: 0s
+
+.button-search
+	font-family: $f-faw
+	background: none
+	height: 33px
+	width: 37px
+	border: 0
+	outline: 0
+	margin-left: -37px
+	padding: 0
+	cursor: pointer
+	position: relative
+	&:after
+		content: "\f002"
+		position: absolute
+		width: 18px
+		height: 18px
+		top: 7px
+		right: 10px
+		color: #dddddd
+		opacity: 1
+		background: transparent
+		font-size: 18px
+		line-height: 18px
+	&:hover
+		background: transparent
