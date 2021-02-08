@@ -68,7 +68,7 @@ var apiButt = $('#my-menu').data('mmenu');
 //  formstyler для странуцы карты, стилизация инпута
     $('.js-styler').styler();
 
-//  для странуцы карты - перемещает ингридиенты из добавок в продукт
+//  для страницы карты - перемещает ингридиенты из добавок в продукт
 
     $('.items-wrapper').on('click', '.edit.item-small .badge' , function(e){
         let thisParent = $(this).parent('.edit').parent().parent().attr('class').split(' ')[0],
