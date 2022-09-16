@@ -27,6 +27,6 @@
     "vinyl-ftp": "^0.6.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0"
+    "bootstrap": "^4.3.1"
   }
 }
